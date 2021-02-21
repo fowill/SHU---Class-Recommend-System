@@ -1,0 +1,20 @@
+{% if user.is_authenticated %}
+<p>你已经登录啦！</p>
+<a href="../">点我返回</a>
+<p>
+{% else %}
+  <h3 class="text-center">赶紧登录，查看最适合你的通选课吧！</h3>
+  <form method="post">
+    {% csrf_token %}
+    用户名:<br/>
+    <input type="text" name="username">
+    <br/>
+    密码:<br/>
+    <input type="password" name="password">
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+
+<p>SHU-LRS，你的选课好伙伴</p>
+{% endif %}
+

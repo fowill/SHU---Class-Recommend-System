@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>SHULRS-Lesson Recommend System</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+<body>
+  <div class="blog-masthead">
+    <ol class="breadcrumb">
+      <li><a href='/'>首页</a></li>
+      <li><a href='/login'>登录状态</a></li>
+  </div>
+  <h1 style="text-align:center">上海大学-通选课推荐系统v0.1</h1>
+
+  <div class="posts">
+  {% if user.is_authenticated %}
+  <h4><a>{{ post.school }}</a>学院学号为<a>{{ post.student_id }}</a>的同学您好!</h4>
+  <h4>您通选课的平均绩点为<a>{{ post.gpa }}</a></h4>
+  <h4>平均满意打分（-3至3分）为<a>{{ post.score }}</a></h4>
+  <h4>根据智能算法推荐，为您推荐以下课程：</h4>
+  <div class="posts">
+  <table class="table table-striped table table-hover">
+  <thead>
+    <tr>
+      <th>课程名</th>
+      <th>预计gpa</th>
+      <th>推荐次序</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="post-student_id">{{ gpa_class.0 }}</td>
+      <td class="post-student_id">{{ gpa_reasons.0 }}</td>
+      <td class="post-student_id">{{ 1 }}</td>
+    </tr> 
+    <tr>
+      <td class="post-student_id">{{ gpa_class.1 }}</td>
+      <td class="post-student_id">{{ gpa_reasons.1 }}</td>
+      <td class="post-student_id">{{ 2 }}</td>
+    </tr> 
+    <tr>
+      <td class="post-student_id">{{ gpa_class.2 }}</td>
+      <td class="post-student_id">{{ gpa_reasons.2 }}</td>
+      <td class="post-student_id">{{ 3 }}</td>
+    </tr> 
+    <tr>
+      <td class="post-student_id">{{ gpa_class.3 }}</td>
+      <td class="post-student_id">{{ gpa_reasons.3 }}</td>
+      <td class="post-student_id">{{ 4 }}</td>
+    </tr> 
+    <tr>
+      <td class="post-student_id">{{ gpa_class.4 }}</td>
+      <td class="post-student_id">{{ gpa_reasons.4 }}</td>
+      <td class="post-student_id">{{ 5 }}</td>
+    </tr> 
+    <tr>
+      <td class="post-student_id">{{ gpa_class.5 }}</td>
+      <td class="post-student_id">{{ gpa_reasons.5 }}</td>
+      <td class="post-student_id">{{ 6 }}</td>
+    </tr> 
+    <tr>
+      <td class="post-student_id">{{ gpa_class.6 }}</td>
+      <td class="post-student_id">{{ gpa_reasons.6 }}</td>
+      <td class="post-student_id">{{ 7 }}</td>
+    </tr> 
+    <tr>
+      <td class="post-student_id">{{ gpa_class.7 }}</td>
+      <td class="post-student_id">{{ gpa_reasons.7 }}</td>
+      <td class="post-student_id">{{ 8 }}</td>
+    </tr> 
+    <tr>
+      <td class="post-student_id">{{ gpa_class.8 }}</td>
+      <td class="post-student_id">{{ gpa_reasons.8 }}</td>
+      <td class="post-student_id">{{ 9 }}</td>
+    </tr> 
+    <tr>
+      <td class="post-student_id">{{ gpa_class.9 }}</td>
+      <td class="post-student_id">{{ gpa_reasons.9 }}</td>
+      <td class="post-student_id">{{ 10 }}</td>
+    </tr> 
+  </tbody>
+</table>
+  <table class="table table-striped table table-hover">
+  <thead>
+    <tr>
+      <th>课程名</th>
+      <th>预计评分</th>
+      <th>推荐次序</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="post-student_id">{{ score_class.0 }}</td>
+      <td class="post-student_id">{{ score_reasons.0 }}</td>
+      <td class="post-student_id">{{ 1 }}</td>
+    </tr> 
+    <tr>
+      <td class="post-student_id">{{ score_class.1 }}</td>
+      <td class="post-student_id">{{ score_reasons.1 }}</td>
+      <td class="post-student_id">{{ 2 }}</td>
+    </tr> 
+    <tr>
+      <td class="post-student_id">{{ score_class.2 }}</td>
+      <td class="post-student_id">{{ score_reasons.2 }}</td>
+      <td class="post-student_id">{{ 3 }}</td>
+    </tr> 
+    <tr>
+      <td class="post-student_id">{{ score_class.3 }}</td>
+      <td class="post-student_id">{{ score_reasons.3 }}</td>
+      <td class="post-student_id">{{ 4 }}</td>
+    </tr> 
+    <tr>
+      <td class="post-student_id">{{ score_class.4 }}</td>
+      <td class="post-student_id">{{ score_reasons.4 }}</td>
+      <td class="post-student_id">{{ 5 }}</td>
+    </tr> 
+    <tr>
+      <td class="post-student_id">{{ score_class.5 }}</td>
+      <td class="post-student_id">{{ score_reasons.5 }}</td>
+      <td class="post-student_id">{{ 6 }}</td>
+    </tr> 
+    <tr>
+      <td class="post-student_id">{{ score_class.6 }}</td>
+      <td class="post-student_id">{{ score_reasons.6 }}</td>
+      <td class="post-student_id">{{ 7 }}</td>
+    </tr> 
+    <tr>
+      <td class="post-student_id">{{ score_class.7 }}</td>
+      <td class="post-student_id">{{ score_reasons.7 }}</td>
+      <td class="post-student_id">{{ 8 }}</td>
+    </tr> 
+    <tr>
+      <td class="post-student_id">{{ score_class.8 }}</td>
+      <td class="post-student_id">{{ score_reasons.8 }}</td>
+      <td class="post-student_id">{{ 9 }}</td>
+    </tr> 
+    <tr>
+      <td class="post-student_id">{{ score_class.9 }}</td>
+      <td class="post-student_id">{{ score_reasons.9 }}</td>
+      <td class="post-student_id">{{ 10 }}</td>
+    </tr> 
+  </tbody>
+</table>
+
+</div>
+{% endif %}
+</body>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+ </body>
+ </html>

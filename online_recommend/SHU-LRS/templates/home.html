@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if not user.is_authenticated %}
+<p class="posts">同学，您好！请先登录查看信息！</p>
+{% endif %}
+{% if user.is_authenticated %}
+<p align="center">点击<a align="center" href="../recommend">这里</a>开始课程推荐</p>
+{% endif %}
+{% endblock %}
